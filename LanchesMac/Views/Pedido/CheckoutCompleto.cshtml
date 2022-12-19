@@ -1,0 +1,47 @@
+@model Pedido;
+
+<div class="container marginTop1">
+    <div class="jumbotron">
+        <h2>@ViewBag.CheckoutCompletoMensagem</h2>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <p>Tên khách hàng: <strong>@Model.Nome</strong></p>
+            <p>Thời gian mua: <strong>@Model.PedidoEnviado</strong></p>
+            <p>STT: <strong>@Model.PedidoId</strong></p>
+        </div>
+    </div>
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>Số lượng</th>
+            <th>Tên sản phẩm</th>
+            <th>Thành tiền</th>
+        </tr>
+        @foreach (var item in Model.PedidoItens)
+        {
+            <tr>
+                <td>
+                    <img src="@item.Lanche.ImagemUrl" 
+                        width="40" 
+                        height="40"/>
+                </td>
+                <td>@item.Quantidade</td>
+                <td>@item.Lanche.Nome</td>
+                <td>@item.Lanche.Preco</td>
+            </tr>
+        }
+    </table>
+
+    <h4>Tổng tiền: <strong>@(((decimal)ViewBag.TotalPedido).ToString("00.000 vnđ"))</strong></h4>
+</div>
+
+<div class="form-group" style="text-align: center;">
+    <h3>
+        <a class="nav-link text-info"
+            asp-controller="Home"
+            asp-action="Index">
+            Quay về
+        </a>
+    </h3>
+</div>  

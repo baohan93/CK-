@@ -1,0 +1,140 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/*Gio_hang*/
+.gio__hang {
+    font-weight: 700;
+    font-size: 30px;
+    padding: 30px 0;
+    color: #38761d;
+}
+
+.btn__thanhtoan {
+    background-color: #6aa84f;
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin-right: 20px;
+    box-shadow: 10px 10px 10px #e4e3e0;
+}
+
+    .btn__thanhtoan:hover {
+        color: #38761d;
+        transition: .3s;
+    }
+
+.btn__quayve {
+    padding: 10px;
+    text-decoration: none;
+    color: #38761d;
+}
+
+/*contact*/
+.lien__he {
+    font-weight: 700;
+    font-size: 30px;
+    padding: 30px 0;
+    color: #38761d;
+}
+
+.jumbotron {
+    border:3px solid #6aa84f;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 10px 10px 10px #e4e3e0;
+}
+
+.jumbotron__item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+    .jumbotron__item * {
+        margin: 0 10px;
+    }
+
+    .jumbotron__item h5 {
+        text-decoration: none;
+    }
+
+.email {
+    text-decoration: none;
+    color: black;
+}
+
+/*thong tin san pham*/
+.item{
+    margin-bottom:70px;
+}
+h4 a {
+    text-decoration: none;
+    color: #38761d;
+}
+    h4 a:hover {
+        color: 4da128;
+        transition:.3s;
+    }
+.btn__themgiohang {
+    background-color: #4fa42a;
+    border-radius:50%;
+    color:white;
+    font-weight:900;
+}
+
+.seller {
+    color: #38761d;
+    text-align:center;
+    padding:20px 0;
+}
+
+/*chitietsanpham*/
+.card{
+    display:flex;
+}
+.card *{
+    margin:20px;
+}
+.card-fluid{
+    width:500px;
+    border-radius:20px;
+}
+.card-title{
+    font-weight:900;
+    font-size:50px;
+}
+.card-text h5{
+    font-size:15px;
+    font-weight:200;
+}
+
+.form-control1{
+    border:none;
+    border-bottom:1px solid black;
+    border-radius:0px;
+    margin-top:40px;
+    margin-right:20px;
+    width:500px;
+}

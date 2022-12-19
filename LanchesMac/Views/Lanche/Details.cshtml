@@ -1,0 +1,30 @@
+﻿@model Lanche;
+
+<div class="container">
+    <div class="row">
+        <div class="card d-flex flex-row">
+                <img src="@Model.ImagemUrl" class="card-fluid"/>
+            <div class="card-block">
+                <h2 class="card-title">@Model.Nome</h2>
+                <p class="card-text">
+                    <h5>@Model.DescricaoDetalhada</h5>
+                </p>
+                <p class="btn">
+                    <a class="btn btn__themgiohang"
+                       id="cartButton"
+                       asp-controller="CarrinhoCompra"
+                       asp-action="AdicionarItemNoCarrinhoCompra"
+                       asp-route-lancheId=@Model.LancheId>
+                        +  @*@Model.Nome ao carrinho*@
+                    </a>
+                    <a class="btn btn__quayve"
+                       asp-controller="Lanche"
+                       asp-action="List">
+                       @*Ver todos os lanches*@
+                       Tất cả sản phẩm
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

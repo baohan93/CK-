@@ -1,0 +1,63 @@
+@model CarrinhoCompraViewModel;
+
+@{
+    ViewData["Title"] = "Giỏ hàng";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <img src="~/images/Full-Cart-icon.png" width="30" height="35" class="col-md-1" />
+            <h4 class="col-md-11 gio__hang">GIỎ HÀNG </h4>
+        </div>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Số lượng:</th>
+                    <th>Tên sản phẩm:</th>
+                    <th class="text-right">Đơn giá</th>
+                    <th class="text-right">Thành tiền</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CarrinhoCompra.CarrinhoCompraItens)
+                {
+                    <tr>
+                        <td class="text-center">@item.Quantidade</td>
+                        <td class="text-center">@item.Lanche.Nome</td>
+                        <td class="text-center">@item.Lanche.Preco.ToString("0.000 vnđ")</td>
+                        <td class="text-center">@((item.Lanche.Preco * item.Quantidade).ToString("0.000 vnđ"))</td>
+                        <td class="text-center">
+                            <a asp-controller="CarrinhoCompra"
+                           asp-action="RemoverItemDoCarrinhoCompra"
+                           asp-route-lancheId="@item.Lanche.LancheId">
+                                <img src="~/images/remove.ico"
+                                 width="20px"
+                                 height="20px" />
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">TỔNG CỘNG: </td>
+                    <td class="text-right">@Model.CarrinhoCOmpraTotal.ToString("0.000 vnđ")</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="text-right">
+            <div class="btn-group">
+                <a class="btn__thanhtoan"
+                   asp-controller="Pedido"
+                   asp-action="Checkout">Thanh toán</a>
+                <a class="btn__quayve"
+                   asp-controller="Lanche"
+                   asp-action="List">Quay về Menu</a>
+            </div>
+        </div>
+    </div>
+</div>
